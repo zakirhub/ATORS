@@ -1,0 +1,150 @@
+{% extends 'ticket/base.html' %}
+{% load static %}
+
+	{% block content %}
+		<div class="banner">
+			<div class="owl-four owl-carousel" itemprop="image">
+				<img src="{% static 'ticket/images/page-banner.jpg' %}" alt="Image of Bannner">
+				<img src="{% static 'ticket/images/page-banner2.jpg' %}" alt="Image of Bannner">
+				<img src="{% static 'ticket/images/page-banner3.jpg' %}" alt="Image of Bannner">
+			</div>
+			<div class="container" itemprop="description">
+				<h1>W E L C O M E</h1>
+				<h3>Book your flight with us on cheap price . . .</h3>
+			</div>
+			 <div id="owl-four-nav" class="owl-nav"></div>
+		</div>
+		<!-- Banner Close -->
+			<section class="whyUs-section">
+			<div class="container">
+				<div class="featured-points">
+					<ul>
+						<li><i class="fas fa-book"></i> Best Service</li>
+						<li><i class="fas fa-money-check-alt"></i> low price</li>
+						<li><i class="fas fa-chalkboard-teacher"></i> quick response</li>
+						<li> <i class="fas fa-book"></i> easy to book</li>
+					</ul>
+				</div>
+				<div class="whyus-wrap">
+					<h1>why us?</h1>
+					<p itemprop="description">We have extended connections with travel suppliers globally and have access to exclusive deals. We can negotiate best deals for their clients in order to provide them with the best value. We also provide an array of choices relying on the spending plan. <br> <br> We help passangers to book his/her ticket at very low price. <br> We find and compare the cheapest and best airline tickets for you. We're free, which means that we never add any booking fees. <br><br> We provide the best service and gave quick response to our clients.</p>
+				</div>
+			</div>
+		</section>
+		<!-- Closed WhyUs section -->
+		<div class="page-heading">
+			<div class="container">
+				<h2>popular places</h2>
+			</div>
+		</div>
+		<!-- Popular courses End -->
+		<div class="learn-courses">
+			<div class="container">
+				<div class="courses">
+					<div class="owl-one owl-carousel">
+						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
+							<div class="img-wrap" itemprop="image"><img src="{% static 'ticket/images/paris.jpg'%}" alt="courses picture"></div>
+								<a href="#" class="learn-desining-banner" itemprop="name">Paris >>></a>
+							<div class="box-body" itemprop="description">
+								<p>The magnetic City of Light draws visitors from around the globe who come to see iconic attractions like the Eiffel Tower.</p>
+								<section itemprop="time">
+									<p><span>Duration:</span>3 Months</p>
+									<p><span>Fee:</span> Rs 4,00000</p>
+								</section>
+								<a href="{% url 'bookTicket' %}"><button type="button" class="btn btn-success btn-lg" style="margin-left: 90px; margin-top: 5px; padding-left: 50px; padding-right: 50px;">Book Now</button></a>
+							</div>
+						</div>
+
+						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
+							<div class="img-wrap"  itemprop="image"><img src="{% static 'ticket/images/london.jpg' %}" alt="courses picture"></div>
+								<a href="#" class="learn-desining-banner" itemprop="name">London >>></a>
+							<div class="box-body" itemprop="description">
+								<p>London is a world unto itself. The eclectic neighborhoods, which are home to a blend of historical landmarks and modern-day attractions. </p>
+								<section itemprop="time">
+									<p><span>Duration:</span> 2 Months</p>
+									<p><span>Fee:</span> 3,00000</p>
+								</section>
+								<a href="{% url 'bookTicket' %}"><button type="button" class="btn btn-success btn-lg" style="margin-left: 90px; margin-top: 5px; padding-left: 50px; padding-right: 50px;">Book Now</button></a>
+							</div>
+						</div>
+
+						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
+							<div class="img-wrap"  itemprop="image"><img src="{% static 'ticket/images/tokyo.jpg' %}" alt="courses picture"></div>
+								<a href="#" class="learn-desining-banner" itemprop="name">Tokyo >>></a>
+							<div class="box-body" itemprop="description">
+								<p>Simply setting foot in Japan's cosmopolitan capital is an experience within itself. Tokyo is best place to visit.</p>
+								<section itemprop="time">
+									<p><span>Duration:</span> 1 Month</p>
+								
+									<p><span>Fee:</span> 1,00000</p>
+								</section>
+								<a href="{% url 'bookTicket' %}"><button type="button" class="btn btn-success btn-lg" style="margin-left: 90px; margin-top: 5px; padding-left: 50px; padding-right: 50px;">Book Now</button></a>
+							</div>
+						</div>
+
+						<div class="box-wrap" itemprop="event" itemscope itemtype=" http://schema.org/Course">
+							<div class="img-wrap"  itemprop="image"><img src="{% static 'ticket/images/dubai.jpg' %}" alt="courses picture"></div>
+								<a href="#" class="learn-desining-banner" itemprop="name">Dubai >>></a>
+							<div class="box-body" itemprop="description">
+								<p>Activities and historical landmarks await you in Dubai. This Middle Eastern city is filled with some of the world's most notable and unique attractions</p>
+								<section itemprop="time">
+									<p><span>Duration:</span> 3 Months</p>
+								
+									<p><span>Fee:</span> 90,000</p>
+								</section>
+								<a href="{% url 'bookTicket' %}"><button type="button" class="btn btn-success btn-lg" style="margin-left: 90px; margin-top: 5px; padding-left: 50px; padding-right: 50px;">Book Now</button></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Learn courses End -->
+		<section class="page-heading">
+			<div class="container">
+				<h2>best air-lines</h2>
+			</div>
+		</section>
+		<section class="latest-news">
+			<div class="container" itemprop="event" itemscope itemtype=" http://schema.org/Event">
+				<div class="owl-two owl-carousel">
+					<div class="news-wrap" itemprop="event">
+						<div class="news-img-wrap" itemprop="image">
+							<img src="{% static 'ticket/images/qatarline.jpg' %}" alt="Latest News Images">
+						</div>
+						<div class="news-detail" itemprop="description">
+							<a href=""><h1>Qatar Airways</h1></a>
+							
+
+							<p>In a relatively short time, Qatar Airways has grown to more than 140 destinations worldwide, offering levels of service excellence that helped the award-winning carrier to become best in the world.</p>
+						</div>
+					</div>
+
+					<div class="news-wrap" itemprop="event">
+						<div class="news-img-wrap" itemprop="image">
+							<img src="{% static 'ticket/images/emirates.jpg' %}" alt="Latest News Images">
+						</div>
+						<div class="news-detail" itemprop="description">
+							<a href=""><h1>Emirates.</h1></a>
+						
+
+							<p>Founded in 1985, and flying out of Dubai with just two aircraft, Emirates now has a fleet of more than 230 aircraft, and currently fly to over 140 destinations in more than 80 countries around the world.</p>
+						</div>
+					</div>
+
+					<div class="news-wrap" itemprop="event">
+						<div class="news-img-wrap" itemprop="image">
+							<img src="{% static 'ticket/images/airblue.jpg' %}" alt="Latest News Images">
+						</div>
+						<div class="news-detail" itemprop="description">
+							<a href=""><h1>Airblue</h1></a>
+						
+
+							<p>Airblue Limited is a private Pakistani airline with its head office on the 12th floor of the Islamabad Stock Exchange Towers in Islamabad and international flights</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Latest News CLosed -->
+			{% endblock content %}

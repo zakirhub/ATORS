@@ -1,0 +1,68 @@
+{% extends 'ticket/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if ticket %}
+    {% for t in ticket %}
+    <section class="secClass">
+        <div class="title">
+            <H1>---Online Ticket---</H1>
+            <h2>{{t.travel_class}}</h2>
+            <hr style="width: 80%;">
+        </div>
+       <div class="container inner">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3>Name: {{t.name}} </h3>
+            </div>
+            <div class="col-sm-6">
+                <h3>Phone: {{t.phone}} </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3>Flying from: {{t.flying_from}}</h3>
+            </div>
+            <div class="col-sm-6">
+                <h3>Flying to: {{t.flying_to}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3>Departing Data: {{t.departing_date}}</h3>
+            </div>
+            <div class="col-sm-6">
+                <h3>Returning Data: {{t.return_date}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Ticket type: {{t.type}}</h3>
+            </div>
+            <div class="col-sm-4">
+                <h3>Adults: {{t.adults}}</h3>
+            </div>
+            <div class="col-sm-4">
+                <h3>Childrens: {{t.childrens}}</h3>
+            </div>
+        </div>
+        <div class="title">
+            <hr style="width: 80%;">
+            <H1>---HAVE A SAFE FLIGHT---</H1>
+        </div>
+       </div>
+    </section>
+    <form action="{% url 'delete' t.id %}" method="POST" style="text-align: center;">
+        {% csrf_token %}
+        <input type="submit" value="Delete Ticket" style="background-color: red; color: white;  margin-bottom: 10px; height: 35px; width: 120px; font-size: 15px;">
+    </form>
+    {% endfor %}
+    {% else %}
+    <h1 style="color: red; padding: 150px; text-align: center;">You have no ticket please click the button to book your ticket
+       <br> <a href="{% url 'bookTicket' %}"><button type="button" class="btn btn-success btn-lg" style="margin-left: 90px; margin-top: 5px; padding-left: 50px; padding-right: 50px;">Book Now</button></a></h1>
+  
+{% endif %}
+
+
+{% endblock content %}

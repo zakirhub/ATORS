@@ -1,0 +1,25 @@
+{% extends 'ticket/base.html' %}
+{% load static %}
+
+{% block content %}
+     <!-- login form -->
+     <div class="container contact-container">  
+        <form id="contact" action="" method="post">  {% csrf_token %} 
+            <h5>user name:</h5>
+         <fieldset>
+            {{form.username}}
+         </fieldset>
+         <h5>password:</h5>
+         <fieldset>
+            {{form.password}}
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Log In</button>
+          </fieldset>
+          {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+        <p style="color: red;">{{error}}</p>
+        {% endfor %}
+        {% endif %}    
+        </form>
+      </div>
+       <!-- end login form -->
+{% endblock content %}

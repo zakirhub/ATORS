@@ -1,0 +1,114 @@
+{% extends 'ticket/base.html' %}
+{% load static %}
+{% block content %}
+<div id="booking" class="section">
+    <div class="section-center">
+        <div class="container">
+            <div class="row">
+                <div class="booking-form">
+                    <form method="post">  {% csrf_token %}
+                        <div class="form-group">
+                            <div class="form-checkbox">
+                                <label for="roundtrip">
+                                    <input type="radio" id="roundtrip" name="flight-type" value="Roundtrip" required>
+                                    <span></span>Roundtrip
+                                </label>
+                                <label for="one-way">
+                                    <input type="radio" id="one-way" name="flight-type" value="One-way" required>
+                                    <span></span>One way
+                                </label>
+                                <label for="multi-city">
+                                    <input type="radio" id="multi-city" name="flight-type" value="multi-city" required>
+                                    <span></span>Multi-City
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <span class="form-label">Name</span>
+                                    <input class="form-control" type="text" placeholder="Name " name="name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <span class="form-label">Phone Number</span>
+                                    <input class="form-control" type="text" placeholder="Phone Number" name="number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <span class="form-label">Flying from</span>
+                                    <input class="form-control" type="text" placeholder="City or airport" name="from">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <span class="form-label">Flyning to</span>
+                                    <input class="form-control" type="text" placeholder="City or airport" name="to">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <span class="form-label">Departing</span>
+                                    <input class="form-control" type="date" required name="departing">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <span class="form-label">Returning</span>
+                                    <input class="form-control" type="date" required name="returning">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <span class="form-label">Adults (18+)</span>
+                                    <select class="form-control" name="adults">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                    <span class="select-arrow"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <span class="form-label">Childrens (0-17)</span>
+                                    <select class="form-control" name="childrens">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                    <span class="select-arrow"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <span class="form-label">Travel class</span>
+                                    <select class="form-control" name="class">
+                                        <option value="Economy class">Economy class</option>
+                                        <option value="Business class">Business class</option>
+                                        <option value="First class">First class</option>
+                                    </select>
+                                    <span class="select-arrow"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-btn">
+                                    <button class="submit-btn">Book Flight <i class="fa-sharp fa-solid fa-plane-departure"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
